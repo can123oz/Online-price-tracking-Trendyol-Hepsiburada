@@ -1,0 +1,24 @@
+{
+  "name": "bot-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "cheerio": "^1.0.0-rc.12",
+    "cron": "^2.0.0",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.2",
+    "puppeteer": "^15.3.0"
+  }
+}
