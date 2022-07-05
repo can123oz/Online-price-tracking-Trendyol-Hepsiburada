@@ -24,25 +24,21 @@ router.post("/", async (req, res) => {
         enabled : true, 
         createDate : new Date(), 
     });
-
     await product.save();
     res.json({status: true , body: product._id });
 });
 
 router.put("/:id", async (req, res) => {
-
     const {
-        hepsiburadaUrl, trendyolUrl, title, emailList
+        hepsiburadaUrl, trendyolUrl, title, emailList, enabled
     } = req.body;
     await Product.findByIdAndUpdate({ 
         _id : req.params.id,
-    },{ hepsiburadaUrl, trendyolUrl, title, emailList});
-
+    },{ hepsiburadaUrl, trendyolUrl, title, emailList, enabled});
     res.json({status: true, body: {} });
 });
 
 router.delete("/:id", async (req, res) => {
-
     const { id } = req.params;
     await Product.findByIdAndRemove(id);
     res.json({status: true, body: id });

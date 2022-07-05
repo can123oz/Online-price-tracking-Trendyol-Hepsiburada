@@ -38,7 +38,9 @@ const run = async () => {
     await Promise.all(productList.map( async (item) => {
         const hepsiburadaPrice = await scrapeUrl(item.hepsiburadaUrl, 0);
         const trendyolPrice = await scrapeUrl(item.trendyolUrl, 1);
-
+        
+        // burada mail at
+        // await mailsender();
         console.log("trendyol price : " , trendyolPrice);
         console.log("hepsiburada price : " , hepsiburadaPrice);
 

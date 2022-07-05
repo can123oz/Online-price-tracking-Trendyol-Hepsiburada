@@ -16,7 +16,6 @@ app.use(bodyParser.json());
 app.use("/product", require("./routes/poduct"));
 app.use("/pricehistory", require("./routes/priceList"));
 
-
 const job = new CronJob("*/10 * * * * *" , () => require("./Service/check-price").run(), 
 null, true, "Europe/Istanbul");
 
