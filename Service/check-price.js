@@ -3,7 +3,7 @@ const axios = require("axios");
 const mongoose = require("mongoose");
 const Product = require("../Models/product");
 const PriceHistory = require("../Models/priceHistory");
-const emailSender = require("../../emailBot/email-send");
+//const emailSender = require("../../emailBot/email-send");
 
 
 const getProducts = async () => {
@@ -40,12 +40,12 @@ const run = async () => {
         const hepsiburadaPrice = await scrapeUrl(item.hepsiburadaUrl, 0);
         const trendyolPrice = await scrapeUrl(item.trendyolUrl, 1);
         
-        // burada mail at
+        // send mail here..
         // await mailsender();
         console.log("trendyol price : " , trendyolPrice);
         console.log("hepsiburada price : " , hepsiburadaPrice);
 
-        await emailSender(item.emailList,"Price tracking results",`For Trendyol: ${trendyolPrice} and For Hepsiburada: ${hepsiburadaPrice}`);
+        //await emailSender(item.emailList,"Price tracking results",`For Trendyol: ${trendyolPrice} and For Hepsiburada: ${hepsiburadaPrice}`);
         const priceLog = new PriceHistory({
             _id: mongoose.Types.ObjectId(),
             currentPriceHepsiburada: hepsiburadaPrice,
